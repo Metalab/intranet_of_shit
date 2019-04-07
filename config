@@ -1,13 +1,42 @@
 title: Home
 views:
   - cards:
-      - type: vertical-stack
-        cards:
+      - type: glance
+        show_state: false
+        title: Ceiling
+        columns: 5
+        entities:
+          - type: entity-button
+            tap_action:
+              action: call-service
+              service: rest_command.lounge_lights_off
+            show_icon: true
+            show_name: true
+            entity: zone.home
+            name: 'Off'
+            icon: 'mdi:brightness-1'
+          - type: entity-button
+            tap_action:
+              action: call-service
+              service: rest_command.lounge_lights_super_chillig
+            show_icon: true
+            show_name: true
+            entity: zone.home
+            name: Super Chillig
+            icon: 'mdi:brightness-2'
+          - type: entity-button
+            tap_action:
+              action: call-service
+              service: rest_command.lounge_lights_chillig
+            show_icon: true
+            show_name: true
+            entity: zone.home
+            name: Chillig
+            icon: 'mdi:brightness-4'
           - entity: zone.home
-            hold_action:
-              action: more-info
-            name: Lounge Lights Normal
-            show_icon: false
+            name: Normal
+            icon: 'mdi:brightness-5'
+            show_icon: true
             show_name: true
             tap_action:
               action: call-service
@@ -16,51 +45,16 @@ views:
           - type: entity-button
             tap_action:
               action: call-service
-              service: rest_command.lounge_lights_off
-            hold_action:
-              action: more-info
-            show_icon: false
-            show_name: true
-            entity: zone.home
-            name: Lounge Lights Off
-          - type: entity-button
-            tap_action:
-              action: call-service
-              service: rest_command.lounge_lights_super_chillig
-            hold_action:
-              action: more-info
-            show_icon: false
-            show_name: true
-            entity: zone.home
-            name: Lounge Lights Super Chillig
-          - type: entity-button
-            tap_action:
-              action: call-service
               service: rest_command.lounge_lights_bright
-            hold_action:
-              action: more-info
-            show_icon: false
+            show_icon: true
             show_name: true
             entity: zone.home
-            name: Lounge Lights Bright
-          - type: entity-button
-            tap_action:
-              action: call-service
-              service: rest_command.lounge_lights_chillig
-            hold_action:
-              action: more-info
-            show_icon: false
-            show_name: true
-            entity: zone.home
-            name: Lounge Lights Chillig
+            name: Bright
+            icon: 'mdi:sunglasses'
       - type: iframe
         url: 'http://10.20.30.90:8083'
         aspect_ratio: 41%
         title: Color Picker
-      - type: glance
-        entities: []
-        title: Lights
-        columns: 5
     badges: []
     title: Lounge
     panel: false
