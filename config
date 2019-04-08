@@ -1,88 +1,190 @@
 title: Home
 views:
-  - cards:
-      - type: glance
-        show_state: false
-        title: Ceiling
-        columns: 5
+  - badges: []
+    cards:
+      - columns: 5
         entities:
-          - type: entity-button
+          - entity: zone.home
+            icon: 'mdi:space-invaders'
+            name: Invaders
+            show_icon: true
+            show_name: true
+            tap-action:
+              action: none
+            type: entity-button
+          - entity: zone.home
+            hold_action:
+              action: none
+            name: other-pony-on
+            show_icon: false
+            show_name: true
+            tap_action:
+              action: call-service
+              service: rest_command.lounge_pony_on
+            type: entity-button
+          - entity: zone.home
+            hold_action:
+              action: none
+            name: other-pony-off
+            show_icon: false
+            show_name: true
+            tap_action:
+              action: call-service
+              service: rest_command.lounge_pony_off
+            type: entity-button
+          - entity: zone.home
+            icon: 'mdi:horseshoe'
+            name: Horsie
+            show_icon: true
+            show_name: true
+            tap-action:
+              action: none
+            type: entity-button
+          - entity: zone.home
+            icon: 'mdi:cube'
+            name: Cubelamp
+            show_icon: true
+            show_name: true
+            tap-action:
+              action: none
+            type: entity-button
+          - entity: zone.home
+            icon: 'mdi:ghost-off'
+            name: Metacade
+            show_icon: true
+            show_name: true
+            tap-action:
+              action: none
+            type: entity-button
+        show_state: false
+        title: Other
+        type: glance
+      - columns: 5
+        entities:
+          - entity: zone.home
+            icon: 'mdi:brightness-1'
+            name: 'Off'
+            show_icon: true
+            show_name: true
             tap_action:
               action: call-service
               service: rest_command.lounge_lights_off
+            type: entity-button
+          - entity: zone.home
+            icon: 'mdi:brightness-2'
+            name: Super Chillig
             show_icon: true
             show_name: true
-            entity: zone.home
-            name: 'Off'
-            icon: 'mdi:brightness-1'
-          - type: entity-button
             tap_action:
               action: call-service
               service: rest_command.lounge_lights_super_chillig
+            type: entity-button
+          - entity: zone.home
+            icon: 'mdi:brightness-4'
+            name: Chillig
             show_icon: true
             show_name: true
-            entity: zone.home
-            name: Super Chillig
-            icon: 'mdi:brightness-2'
-          - type: entity-button
             tap_action:
               action: call-service
               service: rest_command.lounge_lights_chillig
-            show_icon: true
-            show_name: true
-            entity: zone.home
-            name: Chillig
-            icon: 'mdi:brightness-4'
+            type: entity-button
           - entity: zone.home
-            name: Normal
             icon: 'mdi:brightness-5'
+            name: Normal
             show_icon: true
             show_name: true
             tap_action:
               action: call-service
               service: rest_command.lounge_lights_normal
             type: entity-button
-          - type: entity-button
+          - entity: zone.home
+            icon: 'mdi:sunglasses'
+            name: Bright
+            show_icon: true
+            show_name: true
             tap_action:
               action: call-service
               service: rest_command.lounge_lights_bright
-            show_icon: true
-            show_name: true
-            entity: zone.home
-            name: Bright
-            icon: 'mdi:sunglasses'
-      - type: iframe
-        url: 'http://10.20.30.90:8083'
-        aspect_ratio: 41%
+            type: entity-button
+        show_state: false
+        title: Ceiling
+        type: glance
+      - aspect_ratio: 41%
         title: Color Picker
-    badges: []
-    title: Lounge
+        type: iframe
+        url: 'http://10.20.30.90:8083'
+      - title: TODO
+        type: shopping-list
     panel: false
-  - cards:
-      - type: iframe
+    title: Lounge
+  - badges: []
+    cards:
+      - aspect_ratio: 100%
+        type: iframe
         url: 'http://10.20.30.40'
-        aspect_ratio: 100%
-    badges: []
+    panel: true
     title: ScreenInvader
-    panel: true
-  - cards:
-      - type: iframe
+  - badges: []
+    cards:
+      - aspect_ratio: 100%
+        type: iframe
         url: 'http://10.20.30.64'
-        aspect_ratio: 100%
-    badges: []
+    panel: true
     title: Öffimonitor
-    panel: true
-  - cards:
-      - type: iframe
+  - badges: []
+    cards:
+      - aspect_ratio: 100%
+        type: iframe
         url: 'https://metalab.at/cellardoor/'
-        aspect_ratio: 100%
-    badges: []
+    panel: true
     title: Calendar
-    panel: true
-  - cards:
-      - type: iframe
+  - badges: []
+    cards:
+      - aspect_ratio: 100%
+        type: iframe
         url: 'http://10.20.30.90'
-        aspect_ratio: 100%
-    badges: []
-    title: Slackomatic
     panel: true
+    title: Slackomatic
+  - badges: []
+    cards:
+      - aspect_ratio: 100%
+        type: iframe
+        url: 'http://10.20.30.90:8080/advanced.html'
+    panel: true
+    title: OLDSKOOL Slackomatic
+  - badges: []
+    cards: []
+    title: World
+  - badges: []
+    cards:
+      - entities:
+          - entity: switch.bibliothekalarm
+          - entity: switch.loungepony
+          - entity: switch.hauptraumalarm
+          - entity: switch.hauptraumeins
+          - entity: switch.hauptraumzwei
+          - entity: switch.einganglicht
+          - entity: switch.eingangstrahler
+          - entity: switch.welalarm
+          - entity: switch.welbenchlightleft
+          - entity: switch.welbenchlightright
+          - entity: switch.loungeinvaders
+          - entity: switch.blinkentunnel
+          - entity: switch.kassomat
+          - entity: switch.metanudel
+          - entity: switch.loungesquarelamp
+          - entity: switch.loungefan
+        type: entities
+      - entity: zone.home
+        hold_action:
+          action: more-info
+        icon: 'mdi:power'
+        name: shutdown all the things
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: call-service
+          service: script.1554670705768
+        type: entity-button
+    panel: false
+    title: sonoff switches
