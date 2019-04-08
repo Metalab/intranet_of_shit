@@ -4,50 +4,27 @@ views:
     cards:
       - columns: 5
         entities:
-          - entity: zone.home
+          - entity: switch.loungeinvaders
             icon: 'mdi:space-invaders'
             name: Invaders
             show_icon: true
             show_name: true
-            tap-action:
-              action: none
-            type: entity-button
-          - entity: zone.home
-            hold_action:
-              action: none
-            name: other-pony-on
-            show_icon: false
-            show_name: true
-            tap_action:
-              action: call-service
-              service: rest_command.lounge_pony_on
-            type: entity-button
-          - entity: zone.home
-            hold_action:
-              action: none
-            name: other-pony-off
-            show_icon: false
-            show_name: true
-            tap_action:
-              action: call-service
-              service: rest_command.lounge_pony_off
-            type: entity-button
-          - entity: zone.home
+            type: entity
+          - entity: switch.loungepony
             icon: 'mdi:horseshoe'
             name: Horsie
             show_icon: true
             show_name: true
-            tap-action:
-              action: none
-            type: entity-button
-          - entity: zone.home
+          - entity: switch.loungesquarelamp
             icon: 'mdi:cube'
-            name: Cubelamp
+            name: Squarelamp
             show_icon: true
             show_name: true
-            tap-action:
-              action: none
-            type: entity-button
+          - entity: switch.loungefan
+            icon: 'mdi:fan'
+            name: Fan
+            show_icon: true
+            show_name: true
           - entity: zone.home
             icon: 'mdi:ghost-off'
             name: Metacade
@@ -159,21 +136,33 @@ views:
     cards:
       - entities:
           - entity: switch.bibliothekalarm
-          - entity: switch.loungepony
+            icon: 'mdi:alarm-light-outline'
+          - entity: switch.einganglicht
+            icon: 'mdi:ceiling-light'
+          - entity: switch.eingangstrahler
+            icon: 'mdi:spotlight-beam'
+          - entity: switch.blinkentunnel
+            icon: 'mdi:looks'
           - entity: switch.hauptraumalarm
+            icon: 'mdi:alarm-light-outline'
           - entity: switch.hauptraumeins
           - entity: switch.hauptraumzwei
-          - entity: switch.einganglicht
-          - entity: switch.eingangstrahler
           - entity: switch.welalarm
+            icon: 'mdi:alarm-light-outline'
           - entity: switch.welbenchlightleft
           - entity: switch.welbenchlightright
-          - entity: switch.loungeinvaders
-          - entity: switch.blinkentunnel
           - entity: switch.kassomat
+            icon: 'mdi:cash-register'
           - entity: switch.metanudel
+            icon: 'mdi:bowl'
           - entity: switch.loungesquarelamp
+            icon: 'mdi:cube'
+          - entity: switch.loungeinvaders
+            icon: 'mdi:space-invaders'
+          - entity: switch.loungepony
+            icon: 'mdi:horseshoe'
           - entity: switch.loungefan
+            icon: 'mdi:fan'
         type: entities
       - entity: zone.home
         hold_action:
